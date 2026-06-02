@@ -1,0 +1,23 @@
+# Сначала общее правило
+* text=auto
+
+# Unreal бинарники → только через LFS
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap   filter=lfs diff=lfs merge=lfs -text
+
+# Папка Content (всё бинарное)
+Content/** filter=lfs diff=lfs merge=lfs -text
+
+# Текстовые файлы UE (оставляем LF)
+*.ini text eol=lf
+*.uproject text eol=lf
+*.uplugin text eol=lf
+
+# Код
+*.cpp text eol=lf
+*.h   text eol=lf
+*.cs  text eol=lf
+
+# Скрипты
+*.sh  text eol=lf
+*.bat text eol=crlf
